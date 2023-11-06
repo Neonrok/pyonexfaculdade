@@ -28,4 +28,5 @@ def convertText(X):
     return(S)
 
 nome=str(input("escrevai\n>> "))
-print(convertText(nome))
+you=convertText(nome)
+print(you)
