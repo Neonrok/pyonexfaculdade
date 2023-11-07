@@ -1,14 +1,14 @@
 def repet(X):
-    S=""
+    Apalavra=""
     Back=""
     for i in range(len(X)):
         if X[i]==" ":
-            B = X.count(S)
-            if B>1 & Back.count(S)<1:
-                Back+=S+" "
-            S=""
+            NumeroP = X.count(Apalavra)
+            if NumeroP>1 & Back.count(Apalavra)<1:
+                Back+=Apalavra+" "
+            Apalavra=""
         else:
-            S+=X[i]
+            Apalavra+=X[i]
     return(Back)
 
 cont="Y"
