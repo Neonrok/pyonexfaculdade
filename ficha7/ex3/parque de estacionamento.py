@@ -23,7 +23,6 @@ def sair(i, j):
 logares=[[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
 Espasso=[[]]
 
-
 fim=False
 
 while fim==False:
