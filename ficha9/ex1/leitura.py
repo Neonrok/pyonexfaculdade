@@ -1,7 +1,7 @@
 def incerirpaises():
     pais=input("país\n>>")
     continente=input("continente\n>>")
-    escreve="{0}\n{1}\n".format(continente, pais)
+    escreve="{0}\n{1}\n".format(pais, continente)
     f.write(escreve)
 
 def ConsultarPaises():
@@ -38,7 +38,7 @@ def numeroporcotinente():
     consult= f.readlines()
     print("Continente\tnºPaíses\n--------------------------")
     for i in range(len(consult)):
-        if i%2==0 and escolhidos.count(consult[i])==0:
+        if (i+1)%2==0 and escolhidos.count(consult[i])==0:
             escolhidos.append(consult[i])
             conta=0
             for j in range(len(consult)):
