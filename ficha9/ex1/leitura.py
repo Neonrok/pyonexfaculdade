@@ -46,7 +46,7 @@ def numeroporcotinente():
                     conta+=1
             print("{0}\t{1}".format(escolhidos[-1], conta))
 
-f=open("paises.txt", "a+")
+f=open("C:\\Base\\repositorios\\pyonexfaculdade\\ficheiros\\paises.txt", "a+")
 cont=True
 while cont==True:
     Menu= input("\tMENU\n1 - Inserir Paises\n2 - Consultar Paises\n3 - Consultar Continentes\n4 - Consultar nº Paises\n0 - Sair\n\n>>")
