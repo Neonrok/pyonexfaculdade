@@ -12,7 +12,7 @@ def leia():
             break
         print(linha.decode().strip())
 
-local=os.path.join("C:\\Base\\repositorios\\pyonexfaculdade\\ficheiros\\blábláblá.bin")
+local=os.path.join(".\\ficheiros\\blábláblá.bin")
 cont=True
 
 
