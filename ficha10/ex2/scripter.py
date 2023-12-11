@@ -16,31 +16,25 @@ def escreva():
     
     print(escrita, code)
     g.write(code.encode())
+    print("___\n"+code)
     g.close()
 
 
 def script(X):
-
+    
     code=""
-    nlista=False
 
     with open(sefras, "rb") as f:
         base = f.read().decode('utf-8')
-    for i in range(len(X)):
-        for j in range(0, len(base), 2):
-            MoreX = X[i]
-            c1de=base[j]
-            print(MoreX, c1de)
-            if MoreX == str(c1de):
-                print(X[i], c1de, base[j+1])
-                code += base[j+1]
-                nlista=True
-            elif X[i] == " ":
-                print("else", X[i], c1de)
-                code+=" "
-                nlista=True
-        if nlista==False:
-            code+=X[i]
+    mapping = {base[i]: base[i+1] for i in range(0, len(base), 2)}  # Cria um mapeamento de caracteres para caracteres codificados
+
+    for char in X:
+        if char in mapping:  # Se o caractere está no mapeamento
+            code += mapping[char]  # Adicione o caractere codificado ao código
+        elif char == " ":  # Se o caractere é um espaço
+            code += " "
+        else:  # Se o caractere não está no mapeamento
+            code += char
     return code
     
 
