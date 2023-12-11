@@ -2,12 +2,7 @@ import os
 
 def escreva():
     
-    with open(sefras, "rb") as f:
-        base = f.read().decode('utf-8')
-
     ficheiro=input("qual o ficheiro\n>>")
-    
-    code=""
     
     if os.path.isfile("./ficha10/ex2/texto/{0}.bin".format(ficheiro)):
         g=open("./ficha10/ex2/texto/{0}.bin".format(ficheiro),"ab+")
@@ -17,18 +12,37 @@ def escreva():
     
     escrita=input(">>")
     
-    for i in range(len(escrita)):
+    code = script(escrita)
     
-        for j in range(0, len(base), 2):
-            c1de=base[j]
-    
-            if escrita[i] == c1de:
-                code+=base[j+1]
-    
-            elif escrita[i] == " ":
-                code+=" "
-    
+    print(escrita, code)
     g.write(code.encode())
+    g.close()
+
+
+def script(X):
+
+    code=""
+    nlista=False
+
+    with open(sefras, "rb") as f:
+        base = f.read().decode('utf-8')
+    for i in range(len(X)):
+        for j in range(0, len(base), 2):
+            MoreX = X[i]
+            c1de=base[j]
+            print(MoreX, c1de)
+            if MoreX == str(c1de):
+                print(X[i], c1de, base[j+1])
+                code += base[j+1]
+                nlista=True
+            elif X[i] == " ":
+                print("else", X[i], c1de)
+                code+=" "
+                nlista=True
+        if nlista==False:
+            code+=X[i]
+    return code
+    
 
 def leia():
     f.seek(0)
@@ -40,8 +54,6 @@ def leia():
             break
     
         print(linha.decode().strip())
-
-
 
 sefras=os.path.join("./ficha10/ex2/sifrado.bin")
 
