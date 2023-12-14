@@ -91,14 +91,14 @@ def decript(X):
 
 
 while True:
-   Menu = input("MENU\n1-escreva\n2-leia\n0-fim\n\n\t>>")
-   match Menu:
-      case "1":
+    Menu = input("MENU\n1-escreva\n2-leia\n0-fim\n\n\t>>")
+    match Menu:
+        case "1":
             escreva()  
-      case "2":
+        case "2":
             print(leia())
-      case "0":
+        case "0":
             print("fim")  
             exit()
-      case _:
+        case _:
             print("erro")
